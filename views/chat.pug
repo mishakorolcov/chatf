@@ -1,0 +1,10 @@
+extends templates/base
+block content
+    h3(class="header")= "Chat: "
+    .chat
+        .message#messages
+    .fom
+        input(type="text" class="message-input" id="message-input")
+        button(class="message-button" id="message-btn") Send
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js")
+    script(src="/js/chat.js")

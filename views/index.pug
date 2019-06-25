@@ -1,0 +1,6 @@
+extends templates/base
+block content
+    h3 Please enter your nickname:
+    form(action="/login" method="POST")
+        input(type='text' name="name" required=true)
+        input(type='submit')

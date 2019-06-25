@@ -1,0 +1,14 @@
+extends templates/base
+block content
+    if principal
+        h3= principal.name + " you can create a chat:"
+    else
+        h3= "Anonim, you can create a chat:"
+    form(action="/create-chat" method="POST")
+        input(type='text' name="name" required=true)
+        input(type='submit')
+    if chats
+        ul
+            each chat in chats
+                li
+                    a(href="/conversations/"+chat._id)=chat.name
